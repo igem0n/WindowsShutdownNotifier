@@ -48,7 +48,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
     wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     wcex.lpszMenuName = NULL;
-    wcex.lpszClassName = L"TestClass";
+    wcex.lpszClassName = L"ShutdownNotifier";
     wcex.hIconSm = NULL;
     return RegisterClassEx(&wcex);
 }
@@ -57,7 +57,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
     RECT sz = {0, 0, 512, 512};
     AdjustWindowRect(&sz, WS_OVERLAPPEDWINDOW, TRUE);
-    hWnd = CreateWindow(L"TestClass", L"Test Window", WS_OVERLAPPEDWINDOW,
+    hWnd = CreateWindow(L"ShutdownNotifier", L"ShutdownNotifier", WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, sz.right - sz.left, sz.bottom - sz.top,
         NULL, NULL, hInstance, NULL);
     if(!hWnd)
